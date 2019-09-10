@@ -1,4 +1,5 @@
-   #include<stdio.h>
+// Archivo de prueba .c
+#include<stdio.h>
    extern int suma(int a, int b);
    int main(void)
    {
