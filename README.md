@@ -1,2 +1,2 @@
-# T-cnicasDigitales2
+# TecnicasDigitales2
 Proyecto de Técnicas Digitales.
