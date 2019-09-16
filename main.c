@@ -8,6 +8,8 @@
      int c=0;
 
      c = suma(a,b);
-  
+ 
+     printf("\nla suma es: %d \n",c);
+
      return 0;
-   } 
+   }
