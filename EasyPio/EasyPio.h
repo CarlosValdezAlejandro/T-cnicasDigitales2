@@ -15,10 +15,31 @@ volatile unsigned int		*gpio; //puntero a la base del gpio
 #define BLOCK_SIZE		(4*1024) //tamaño de memoria
 
 // Registro para manejo de tiempos delay
-#define SYS_TIMER_BASE		(BCM2835_PERI_BASE + 0x3000);
-#define ARM_TIMER_BASE		(BCM2835_PERI_BASE + 0xB000);
+#define SYS_TIMER_BASE		(BCM2835_PERI_BASE + 0x3000)
+#define ARM_TIMER_BASE		(BCM2835_PERI_BASE + 0xB000)
 
-volatile unsigned int *sys_timer;
+volatile unsigned int		 *sys_timer;
+
+
+typedef struct
+{
+	unsigned M0	:1;
+	unsigned M1 	:1;
+	unsigned M2 	:1;
+	unsigned M3 	:1;
+	unsigned 	:28;
+}sys_timer_csbits;
+
+#define SYS_TIMER_CSbits (*(volatile sys_timer_csbits*) (sys_timer + 0))
+#define SYS_TIMER_CS 	(* (volatile unsigned int*)(sys_timer + 0))
+
+#define SYS_TIMER_CLO   (* (volatile unsigned int*)(sys_timer + 1))
+#define SYS_TIMER_CHI   (* (volatile unsigned int*)(sys_timer + 2))
+#define SYS_TIMER_C0	(* (volatile unsigned int*)(sys_timer + 3))
+#define SYS_TIMER_C1	(* (volatile unsigned int*)(sys_timer + 4))
+#define SYS_TIMER_C2	(* (volatile unsigned int*)(sys_timer + 5))
+#define SYS_TIMER_C3	(* (volatile unsigned int*)(sys_timer + 6))
+
 
 //Funcion que realiza el mapeo de memoria fisica en Linux para los puertos gpio
 //
