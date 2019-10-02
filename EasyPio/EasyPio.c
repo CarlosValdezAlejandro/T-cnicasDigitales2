@@ -1,7 +1,7 @@
 #include "EasyPio.h"
 
 
-void pioInitvoid(void)
+void pioInit(void)
 {
         int mem_fd;
         void *reg_map;
