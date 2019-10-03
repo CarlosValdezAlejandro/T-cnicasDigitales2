@@ -17,7 +17,7 @@ void pioInit(void)
                         GPIO_BASE);             //Desplazamiento a periferico GPIO
 
         gpio = (volatile unsigned *)reg_map;
-        close(mem_fd);
+        
 
 
 
@@ -35,7 +35,13 @@ void pioInit(void)
 
         sys_timer = (volatile unsigned *)reg_map;
 
+	close(mem_fd);
+
 }
+
+
+// Funciones de GPIO
+
 
 
 void pinMode(int pin, int function){
@@ -62,6 +68,10 @@ int digitalRead(int pin){
 
 	return (GPLEV[reg] >> offset) & 0x00000001;
 }
+
+
+//Funciones de Tiempo
+
 
 void delayMicros(int micros){
 	SYS_TIMER_C1 = SYS_TIMER_CLO + micros; // sasconfigura el registro de comparacion
