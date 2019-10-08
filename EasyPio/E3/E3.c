@@ -2,8 +2,8 @@
 
 #include "EasyPio.h"
 
-#define NUM_IN = 1
-#define NUM_OUT = 5
+#define NUM_IN  1
+#define NUM_OUT  5
 
 void main(void){
 

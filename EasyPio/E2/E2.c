@@ -28,5 +28,4 @@ while(i){
 //pone en 0  la salida 16
 digitalWrite(16, 0);
 
-return 0;
 }
