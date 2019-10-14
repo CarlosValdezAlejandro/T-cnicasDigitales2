@@ -8,8 +8,8 @@
 
 void main(void){
 	
-int out[NUM_OUT] = {1, 2, 3, 4, 5, 6, 7, 8};
-int in[NUM_IN] = {9};
+int out[NUM_OUT] = {9, 11, 0, 5, 6, 13, 19, 26};
+int in[NUM_IN] = {21};
 
 int i;
 

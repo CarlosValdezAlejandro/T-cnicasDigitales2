@@ -9,7 +9,7 @@ void main(void){
 
 //entra
 int in[NUM_IN] = {21};
-int out[NUM_OUT] = {12, 17, 18, 19, 20};
+int out[NUM_OUT] = {9, 11, 0, 5, 6, 13, 19, 26};
 int i, j, k;
 
 //configuro pines entradas

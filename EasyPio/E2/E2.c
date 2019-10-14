@@ -1,4 +1,7 @@
 //Programa para poner en alto una salida 
+//
+// Salida gpio 16, entradas gpio 21 y 20. 20 controla el led, 21 sale del programa
+
 
 #include "EasyPio.h"
 
