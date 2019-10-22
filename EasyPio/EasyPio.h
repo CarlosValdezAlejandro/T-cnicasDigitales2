@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/mman.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #define BCM2835_PERI_BASE	0x20000000
 #define GPIO_BASE		(BCM2835_PERI_BASE + 0x200000) //base de registro de gpio, se realiza un offset de memoria a la base de regitro principal
@@ -60,5 +62,8 @@ void digitalWrite(int, int );
 int digitalRead(int);
 void delayMicros(int);
 void delayMillis(int);
+void pinMode_in(int [], int);
+void pinMode_out(int [], int);
+void digitalWrite_s (int [],int, int);
 
 #endif

@@ -1,7 +1,7 @@
 #include "EasyPio.h"
 
 
-void pioInit(void)
+void pioInit()
 {
         int mem_fd;
         void *reg_map;
@@ -48,8 +48,8 @@ void pinMode(int pin, int function){
 	
 	int reg = pin/10;
 	int offset =(pin%10)*3;
-	GPFSEL[reg] &= ~((0b111&~function) <<offset);
-	GPFSEL[reg]  =  ((0b111& function) <<offset);
+	GPFSEL[reg] &= ~((0b111 & ~function) << offset);
+	GPFSEL[reg] |=  ((0b111 & function) << offset);
 }
 
 void digitalWrite(int pin, int val){
@@ -83,4 +83,33 @@ void delayMillis(int millis){
 	delayMicros(millis*1000);   	      // 1000us por ms
 }
 
+void pinMode_out(int outputs[], int size){
+	
+	int i;
+	
+	for(i=0 ; i<size ; ++i )
+		{
+			pinMode(outputs[i], OUTPUT);
+		}
+}
 
+void pinMode_in(int inputs[], int size){
+	
+	int i;
+
+	for(i=0 ; i<size ; i++)
+		{
+			pinMode(inputs[i], INPUT);
+		}
+}
+
+void digitalWrite_s(int Write_outputs [], int size, int state){
+
+	
+	int i;
+
+	for(i=0 ; i<size ; i++)
+		{
+			digitalWrite(Write_outputs[i], state);
+		}
+}
