@@ -23,7 +23,7 @@ int main(void){
 		val = analogRead(A2);				//lee tercer canal
 		printf("Termistor: %dmv\n\n",val*3300/255);
 		delay(1000);
-		
+		system("clear");
 	}
 	return 0;
 }
